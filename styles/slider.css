@@ -1,0 +1,65 @@
+.slide_container{
+	width: 550px;
+	overflow: hidden;
+	position: relative;
+}
+/*轮播图片栏*/
+ .slide_list{
+	display: inline-block;
+	width: 3000px;
+	transition: margin-left 0.8s ease-in-out;
+}
+ .slide_list img{
+	float: left;
+	z-index: -1;
+
+}
+/*轮播图下面的按钮栏*/
+.slide_button{
+	position: absolute;
+	padding:4px 8px;
+	bottom: 20px;
+	margin-left: -43px;
+	left:50%;
+	border-radius: 12px;
+	background-color: rgba(90%,90%,90%,0.5);
+}
+.slide_button span{
+	float: left;
+	margin-right:  10px;
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	border-radius: 50%;
+}
+.slide_button span:last-child{
+
+	margin-right:  0px;
+	
+}
+.slide_button span:hover{
+	cursor: pointer;
+}
+.slide_button span.on{
+	background: #d02d00; 
+} 
+/*轮播图左右箭头*/
+.arrow{
+	position: absolute;
+	top: 50%;
+	margin-top: -25px;
+	height: 50px;
+	line-height: 50px;
+	width: 30px;
+	text-align: center;
+	z-index: 1;
+	font-size: 36px;
+	background-color: rgba(0,0,0,.1);
+}
+#prev{
+	left: 0px;
+}
+#next{
+	right: 0px;
+}
