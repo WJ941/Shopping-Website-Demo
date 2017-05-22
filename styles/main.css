@@ -41,6 +41,7 @@ ul{
 	margin-left: 180px;
 	width: 250px;
 	border: 1px solid #d02d00;
+	line-height: 30px;
 }
 #header input[type="button"]{
 	width: 50px;
