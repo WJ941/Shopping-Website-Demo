@@ -5,38 +5,47 @@ $(function(){
 	var next=$("#next");
 	//下方按钮栏的hover功能
 	slide_btns.hover(function(){
-		slide_btns.removeClass("on");
-		$(this).addClass("on");
-		var marginDistance=$(this).attr("index")*-550;
-		slide_list.css("margin-left",function(){
-			return marginDistance;
-		});
+		showImg($(this).attr("index"));
 	});
+	function showImg(index){
+		$(".slide_list img").eq(index).fadeIn()
+			.siblings().fadeOut();
+		$(".slide_button span").eq(index).addClass("on")
+			.siblings().removeClass("on");
+	}
+	showImg(0);
+	var setCarousel =function (){
+		this.carousel=setInterval(displayLoop(),2000);	
+	};
+	setCarousel();
+	function displayLoop(index){
+		var i=index || 1;
+		return function(){
+			if(i===5){i=0;}
+			showImg(i);
+			i++;
+		};
+	};
 	//左右箭头的前后功能
 	prev.click(function(){
-		var curSpan=slide_btns.filter(".on");
-		var curIndex=curSpan.attr("index");
-		slide_btns.removeClass("on");
-		if(curIndex==0){
-			slide_btns.filter(":last").addClass("on");
-			slide_list.css("margin-left","-2200px")
+
+		var cur=$(".slide_button .on").attr("index");
+		if(cur===0){
+			cur=4;
+		}else{
+			cur--;
 		}
-		curSpan.prev().addClass("on");
-		slide_list.css("margin-left",function(){
-			return curSpan.prev().attr("index")*-550;
-		});
+		showImg(cur);
+		
 	});
 	next.click(function(){
-		var curSpan=slide_btns.filter(".on");
-		var curIndex=curSpan.attr("index");
-		slide_btns.removeClass("on");
-		if(curIndex==4){
-			slide_btns.filter(":first").addClass("on");
-			slide_list.css("margin-left","0px")
+		clearInterval(carousel);
+		var cur=$(".slide_button .on").attr("index");
+		if(cur===4){
+			cur=0;
+		}else{
+			cur++;
 		}
-		curSpan.next().addClass("on");
-		slide_list.css("margin-left",function(){
-			return curSpan.next().attr("index")*-550;
-		});
+		showImg(cur);
 	});
 })

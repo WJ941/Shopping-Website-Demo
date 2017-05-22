@@ -1,18 +1,16 @@
 .slide_container{
 	width: 550px;
-	overflow: hidden;
+	height: 321px;
 	position: relative;
 }
 /*轮播图片栏*/
  .slide_list{
-	display: inline-block;
-	width: 3000px;
-	transition: margin-left 0.8s ease-in-out;
+	position: relative;
 }
  .slide_list img{
-	float: left;
-	z-index: -1;
-
+	position: absolute;
+	display: none;
+/*	z-index: -1;*/
 }
 /*轮播图下面的按钮栏*/
 .slide_button{
