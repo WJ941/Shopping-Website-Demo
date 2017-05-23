@@ -1,0 +1,14 @@
+/*main content section, 3 cloumn layout*/
+.content .primary .primary{
+	width: 550px;
+	float: left;
+	display: inline;
+}
+.content .primary .secondary{
+	width: 295px;
+	margin-left: 10px;
+	float: right;
+	display: inline; 
+	
+
+}

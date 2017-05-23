@@ -90,18 +90,22 @@ ul{
 	width: 60px;
 }
 
-/*main content section, 3 cloumn layout*/
-
+/*left column : 商品分类栏*/
 .wrapper{
 	width: 1190px;
-
 	margin: 0 auto;
 	text-align:left;
 }
+.content {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+}
 .content .primary{
 	width: 855px;
-	float: right;
-	display: inline;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 	overflow: hidden;
 }
 .content>.secondary{
@@ -110,20 +114,6 @@ ul{
 	display: inline;
 	border:1px solid #d02d00;
 	padding-left: 10px;
-}
-.content .primary .primary{
-	width: 550px;
-	float: left;
-	display: inline;
-}
-.content .primary .secondary{
-	width: 295px;
-	margin-left: 10px;
-	/*padding-right: 2.63%;*/
-	float: right;
-	display: inline; 
-	
-
 }
 .content .secondary h3{
 	background-color: #d02d00;
@@ -149,87 +139,8 @@ ul{
 	height: 1.2em;
 	margin: 8px 10px 8px 0px;
 }
-
-
-/*右边促销活动*/
-#promotion{
-	height: 176px;
-}
-#promotion_news{
-	margin-top: 6px;
-	border: 1px solid rgba(1,1,1,.3);
-}
-#promotion_news h5{
-
-	border-bottom: 1px solid rgba(1,1,1,.3);
-	padding: 5px 0px 5px 10px;
-}
-#promotion_news>ul{
-	margin: 5px 0px 10px 10px;
-}
-#promotion_news li{
-	padding-top:  3px;
-	font-size: 0.8em;
-}
-
-/*下方品牌促销栏*/
-#brand_discnt{
-	clear: left;
-	width: 798px;
-	overflow: hidden;
-	margin-left: 0px;
-}
-#brand_list{
-	margin-top: 0px;
-	width: 5200px;
-	transition: margin-left 0.6s ease;
-	font-size: 0px;
-}
-.brand_item{
-	display: inline-block;
-	margin-right: 22px;
-}
-.brand_item p{
+footer{
 	text-align: center;
-	background-color: rgba(200,200,200,.618);
-	padding: 1px 0px;
-}
-.brand_item:hover{
-	background-color: rgba(200,200,200,.618);
-	z-index: 2;
-}
-.brand_item p {
-	font-size: 16px;
-}
-
-#brand_tab{
-	text-align: right;
-	padding: 3px 0px;
-}
-#brand_tab p{
-	float: left;
-	font-weight: bold;
-}
-#cata_chos{
-	display: inline-block;
-}
-#cata_chos li{
-	display: inline-block;
-	margin-right: 15px;
-	padding-bottom: 3px;
-}
-#cata_chos li a{
-	padding: 1px 3px 0px 3px ;
-}
-#cata_chos li:last-child{
-	margin-right: 0px;
-}
-.tabOn{
-	background-color: transparent;
-	background-image:  url("../images/chos.gif");
-	background-repeat:  no-repeat;
-	background-position: center bottom;
-}
-#cata_chos .tabOn a{
-	background-color: #fa5889;
+	margin-top: 25px;
+	font-size: 0.6em;
 }
