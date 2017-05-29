@@ -110,6 +110,7 @@ ul{
 }
 .content>.secondary{
 	width: 305px;
+	height: 600px;
 	float: left;
 	display: inline;
 	border:1px solid #d02d00;

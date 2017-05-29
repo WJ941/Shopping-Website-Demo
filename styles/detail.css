@@ -1,8 +1,14 @@
 .hide{
 	display: none;
 }
-li{
+.li-inline li{
 	display: inline-block;
+}
+.orange{
+	background-color: orange;
+}
+.orange-border{
+	border-color: orange;
 }
 p{
 	font-size: 0.8em;
@@ -15,7 +21,7 @@ p{
 #goods_img{
 	border: 1px solid rgba(142,142,142,0.5);
 }
-#zoom_btn{
+#sharper_img{
 	height: 16px;
 	margin: 5px 30%;
 	font-size: 0.75em; 
@@ -26,13 +32,17 @@ p{
 }
 /*------------------------------------*/
 #thumb_imgs {
-
+	
 }
 #thumb_imgs li{
 	width: 85px;
 	height: 85px;
 	margin-top: 10px;
 	border: 1px solid rgba(142,142,142,0.5);
+
+}
+#thumb_imgs li.hide{
+	display: none;
 }
 #goods_choose{
 	width: 500px;
@@ -54,4 +64,54 @@ p{
 #goods_choose p{
 	margin-top: 1em;
 	line-height: 200%;
+}
+#goods_choose>ul>li{
+	margin-bottom: 12px;
+}
+.origi-price{
+	font-size: 0.75em;
+	text-decoration: line-through;
+}
+.promo-price{
+	color: orange;
+	font-size: 1.4em;
+}
+.color-size-choose li{
+	margin-right: 20px;
+	margin-top: 10px;
+	border: 1px solid rgba(160,160,160,0.6);
+	width: 26px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+}
+#rating ul{
+	height: 16px;
+	background: url("../images/star-matrix.gif") no-repeat;
+}
+#rating ul li {
+	width: 16px;
+
+}
+#rating ul li:hover{
+	cursor: pointer;
+}
+#addToCartBtn{
+	width: 94px;
+	height: 30px;
+	background: url("../images/btn_cart.png");
+	border: none;
+}
+#addtoCart{
+	height:190px; 
+	width:500px;
+}
+/*两个弹出层*/
+#basic-dialog-warn{
+	display: none;
+}
+#sharper-img-dialog{
+	display: none;
+	width: 840px;
+	height: 840px;
 }

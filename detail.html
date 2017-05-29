@@ -4,7 +4,11 @@
 	<title>Jane Shopping</title>
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/detail.css">
+	<link rel="stylesheet" href="styles/box.css">
 	<script src="scripts/jquery-3.2.1.min.js"></script>
+	<script src="scripts/jquery.simplemodal-1.4.4.js"></script>
+	<script src="scripts/jquery.elevateZoom-3.0.8.min.js"></script>
+	<script src="scripts/useelevateZoom.js"></script>
 </head>
 <body>
 	<div id="header">
@@ -51,20 +55,20 @@
 			<div class="primary">
 				<div id="goods_display">
 					<div id="goods_img">
-						<img src="images/pro_img/blue_one_small.jpg" alt="blue shirt">
+						<img src="images/pro_img/blue_one_small.jpg" alt="blue shirt" data-zoom-image="images/pro_img/blue_one_big.jpg">	
 					</div>
-					<p id="zoom_btn"><a href="#">&#128269;观看清晰图片</a></p>
-					<ul id="thumb_imgs">
-						<li><a href=""><img src="images/pro_img/blue_one.jpg" alt="blue shirt one"></a></li>
-						<li><a href=""><img src="images/pro_img/blue_two.jpg" alt="blue shirt two"></a></li>
-						<li><a href=""><img src="images/pro_img/blue_three.jpg" alt="blue shirt three"></a></li>
-						<li class="hide"><a href=""><img src="images/pro_img/green_one.jpg" alt="blue shirt one"></a></li>
-						<li class="hide"><a href=""><img src="images/pro_img/green_two.jpg" alt="blue shirt two"></a></li>
-						<li class="hide"><a href=""><img src="images/pro_img/yellow_one.jpg" alt="blue shirt one"></a></li>
-						<li class="hide"><a href=""><img src="images/pro_img/yellow_two.jpg" alt="blue shirt two"></a></li>
+					<p id="sharper_img"><a href="#">&#128269;观看清晰图片</a></p>
+					<ul id="thumb_imgs" class="li-inline">
+						<li class="blue"><a href="#"><img src="images/pro_img/blue_one.jpg" alt="blue shirt one"></a></li>
+						<li class="blue"><a href="#"><img src="images/pro_img/blue_two.jpg" alt="blue shirt two"></a></li>
+						<li class="blue"><a href="#"><img src="images/pro_img/blue_three.jpg" alt="blue shirt three"></a></li>
+						<li class="hide green"><a href="#"><img src="images/pro_img/green_one.jpg" alt="blue shirt one"></a></li>
+						<li class="hide green"><a href="#"><img src="images/pro_img/green_two.jpg" alt="blue shirt two"></a></li>
+						<li class="hide yellow"><a href="#"><img src="images/pro_img/yellow_one.jpg" alt="blue shirt one"></a></li>
+						<li class="hide yellow"><a href="#"><img src="images/pro_img/yellow_two.jpg" alt="blue shirt two"></a></li>
 					</ul>
 					<div id="goods_detail">
-						<ul id="detail_btns">
+						<ul id="detail_btns" class="li-inline">
 							<li><a href="#">产品属性</a></li>
 							<li><a href="#">产品尺码表</a></li>
 							<li><a href="#">产品介绍</a></li>
@@ -79,67 +83,65 @@
 				<div id="goods_choose">
 					<h3>免烫高支棉条纹衬衣</h3>
 					<p>全新精品高支棉衬衫再次提升品质，精选100%新疆长绒棉织造而成，平整度好，短绒少； 80-100高支双股经纬交织，带来无与伦比的舒适享受；而且面料反光效果好，具有漂亮的光泽，质感上佳，有利于免烫效果的维持！</p>
-					<table>
-						<tr>
-							<th>价格：</th>
-							<td>379.00元</td>
-						</tr>
-						<tr>
-							<th>促销：</th>
-							<td>200.00元</td>
-						</tr>
-						<tr>
-							<th>颜色：</th>
-							<td>蓝白</td>
-						</tr>
-						<tr>
-							<td><ul>
-								<li><a href=""><img src="images/pro_img/blue.jpg" alt="color:blue"></a></li>
-								<li><a href=""><img src="images/pro_img/green.jpg" alt="color:green"></a></li>
-								<li><a href=""><img src="images/pro_img/yellow.jpg" alt="color:yellow"></a></li>
+					<ul>
+						<li>
+							<span>价&nbsp;&nbsp; 格：</span>
+							<span class="origi-price">379.00</span><span>元</span>
+						</li>
+						<li>
+							<span>促&nbsp;&nbsp; 销：</span>
+							<span class="promo-price">200.00</span><span>元</span>
+						</li>
+						<li >
+							<span>颜&nbsp;&nbsp; 色：</span>
+							<span>蓝白</span>
+							<span>
+								<ul id="color-select" class="li-inline color-size-choose">
+									<li color="蓝白"><a href="#"><img  src="images/pro_img/blue.jpg"  alt="color:blue"></a></li>
+									<li color="粉绿"><a href="#"><img src="images/pro_img/green.jpg" alt="color:green"></a></li>
+									<li color="黄白" ><a href="#"><img src="images/pro_img/yellow.jpg" alt="color:yellow"></a></li>
 								</ul>	
-							</td>
-
-						</tr>
-						<tr>
-							<th>尺寸：</th>
-							<td>LL</td>
-						</tr>
-						<tr>
-							<td><ul>
-									<li><a href="">S</a></li>
-									<li><a href="">L</a></li>
-									<li><a href="">SL</a></li>
-									<li><a href="">LL</a></li>
+							</span>
+						</li>
+						<li>
+							<span>尺&nbsp;&nbsp; 寸：</span>
+							<span>LL</span>
+							<span><ul id="size-select" class="li-inline color-size-choose">
+									<li><a href="#">S</a></li>
+									<li><a href="#">L</a></li>
+									<li><a href="#">SL</a></li>
+									<li><a href="#">LL</a></li>
 								</ul>
-							</td>
-						</tr>
-						<tr>
-							<th>数量：</th>
-							<td>
-								<select name="" id="">
+							</span>
+						</li>
+						<li>
+							<span>数&nbsp;&nbsp; 量：</span>
+							<span>
+								<select name="amount" id="amount_select">
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
 									<option value="4">4</option>
 									<option value="5">5</option>
 								</select>
-							</td>
-						</tr>
-						<tr>
-							<th>总计：</th>
-							<td>400元</td>
-						</tr>
-						<tr>
-							<th>给商品评分：</th>
-							<td><span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span></td>
-						</tr>
-					</table>
-					<button>放入购物车</button>
+							</span>
+						</li>
+						<li>
+							<span>总&nbsp;&nbsp; 计：</span>
+							<span id="total_price">200</span><span>元</span>
+						</li>
+						<li id="rating">
+							<span>给商品评分:</span>
+							<ul class="li-inline">
+								<li index=1>&nbsp;
+								</li><li index=2>&nbsp;
+								</li><li index=3>&nbsp;
+								</li><li index=4>&nbsp;
+								</li><li index=5>&nbsp;</li>
+							</ul>
+						</li>
+					</ul>
+					<button id="addToCartBtn">&nbsp;</button>
 				</div>
 			</div>
 			<div class="secondary">
@@ -191,9 +193,33 @@
 			</div>
 		</div>
 	</div>
+	<div id="addtoCart">
+		<div id="basic-dialog-ok">
+		<!-- 普通弹出层 -->
+		<div class="box-title show"><h2>提示</h2></div>
+		<div class="box-main">
+			<div class="tips">
+				<span class="ico-ok"><!--图标--></span>
+				<div class="tips-content">
+					<div class="tips-title">感谢您的购买。</div>
+					<div class="tips-line"></div>
+				</div>
+			</div>
+			<div class="box-buttons"><button class="simplemodal-close">关闭</button></div>
+		</div>	
+		<!-- 普通弹出层 -->
+	</div>	
+	</div>
+	
+	<!-- 清晰图片弹出层 -->
+	<div id="sharper-img-dialog">
+		<img src="images/pro_img/blue_one_big.jpg" alt="大图">
+		<div class="simplemodal-close"><a href="#">关闭</a></div>				
+	</div>
 	<footer>Copyright &copy; 2009-1017 JaneShop Inc. </footer>
 	<script src="scripts/slider.js"></script>
 	<script src="scripts/main.js"></script>
-	<script src="scripts/brand_list.js"></script>
+	<script src="scripts/brand-list.js"></script>
+	<script src="scripts/goods-choose.js"></script>
 </body>
 </html>	

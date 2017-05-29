@@ -14,10 +14,7 @@ $(function(){
 			.siblings().removeClass("on");
 	}
 	showImg(0);
-	var setCarousel =function (){
-		this.carousel=setInterval(displayLoop(),2000);	
-	};
-	setCarousel();
+	setInterval(displayLoop(),2000);	
 	function displayLoop(index){
 		var i=index || 1;
 		return function(){
@@ -41,7 +38,7 @@ $(function(){
 	next.click(function(){
 		clearInterval(carousel);
 		var cur=$(".slide_button .on").attr("index");
-		if(cur===4){
+		if(cur==4){
 			cur=0;
 		}else{
 			cur++;
